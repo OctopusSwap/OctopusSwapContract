@@ -49,4 +49,10 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contributing
 
 Pull requests, issues, and suggestions are welcome!  
-Feel free to fork and contribute to improving OctopusSwap.
+Feel free to fork and contribute to improving OctopusSwap. Here’s how to get started:
+
+- Fork the repository
+- Create a new branch (`git checkout -b feature/YourFeature`)
+- Commit your changes (`git commit -m 'Add feature'`)
+- Push to the branch (`git push origin feature/YourFeature`)
+- Open a Pull Request
