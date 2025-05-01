@@ -40,6 +40,20 @@ contract WETH9 {
         return true;
     }
 
+    function increaseAllowance(address guy, uint256 addedWad) public returns (bool) {
+    allowance[msg.sender][guy] += addedWad;
+    emit Approval(msg.sender, guy, allowance[msg.sender][guy]);
+    return true;
+    }
+
+    function decreaseAllowance(address guy, uint256 subtractedWad) public returns (bool) {
+        uint256 currentAllowance = allowance[msg.sender][guy];
+        require(currentAllowance >= subtractedWad, "WPPT: decreased allowance below zero");
+        allowance[msg.sender][guy] = currentAllowance - subtractedWad;
+        emit Approval(msg.sender, guy, allowance[msg.sender][guy]);
+        return true;
+    }
+
     function transfer(address dst, uint256 wad) public returns (bool) {
         return transferFrom(msg.sender, dst, wad);
     }
